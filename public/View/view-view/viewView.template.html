@@ -1,0 +1,30 @@
+    <div class="col-lg-8 text-center">
+        <article class="post">
+            <div class="post-header">
+                <span class="cat">
+                    <a>{{vm.fullBlog.category}}</a>
+                </span>
+                <h2 class="text-capitalize">
+                    <span>
+                        <a>{{vm.fullBlog.title}}</a>
+                    </span>
+                </h2>
+                <span class="date">{{vm.fullBlog.date}}</span>
+            </div>
+            <div class="post-image">
+                <img ng-src="{{vm.fullBlog.pic}}" />
+            </div>
+            <p class="text-justify">{{vm.fullBlog.text}}</p>
+            <!-- <button type="button" class="text-capitalize btn-default pull-left more-link" ui-sref="view({id: blog.id})">Read More...</button> -->
+        </article>
+
+        <div class="post-share">
+            <a><span class="share-box"><i class="fa fa-facebook"></i></span></a>
+            <!-- <a><span class="share-box"><i class="fa fa-twitter"></i></span></a> -->
+            <a><span class="share-box"><i class="fa fa-pinterest"></i></span></a>
+            <!-- <a><span class="share-box"><i class="fa fa-google-plus"></i></span></a> -->
+            <a><span class="share-box"><i class="fa fa-comment-o"></i></span></a>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿    <div class="col-lg-4" id="sidebar">
+        <div class="text-center widget">
+            <h2 class="title">
+                <span>About Me</span>
+            </h2>
+            <div class="widget-content">
+                <img src="Content/img/me.jpg" />
+                <p class="top-pad">Welcome Blogs With Bae</p>
+                <br />
+                <p>This is a blog about the inner working of our relationship and the things that we do to keep things exciting</p>
+            </div>
+        </div>
+        <div class="text-center widget">
+            <h2>
+                <span>Labels</span>
+            </h2>
+            <div class="widget-content">
+                <div class="cloud-label-widget-content">
+                    <span class="label-size label-size-5" ng-repeat="item in vm.categories">
+                        <a ui-sref="view({id: item.id})">{{item.category}}</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="widget">
+            <h2 class="title">
+                <span>Follow Us</span>
+            </h2>
+            <div class="widget-content">
+                <ul class="site-social-networks secondary-2-primary style-default show-title">
+                    <li><a href="#" class="facebook" target="_blank" title="Facebook"><i class="fa fa-facebook"></i>Facebook</a></li>
+                    <li><a href="#" class="twitter" target="_blank" title="Twitter"><i class="fa fa-twitter"></i>Twitter</a></li>
+                    <li><a href="#" class="instagram" target="_blank" title="Instagram"><i class="fa fa-instagram"></i>Instagram</a></li>
+                    <li><a href="#" class="pinterest" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i>Pinterest</a></li>
+                    <li><a href="#" class="bloglovin" target="_blank" title="Bloglovin"><i class="fa fa-heart"></i>Bloglovin</a></li>
+                    <li><a href="#" class="youtube" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i>Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="widget">
+            <h2 class="title">
+                <span>Press</span>
+            </h2>
+            <div class="widget-content">
+                <img src="Content/img/press.jpg" />
+            </div>
+        </div> -->
+    </div>
+</div>

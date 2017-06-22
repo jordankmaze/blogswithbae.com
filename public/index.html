@@ -1,0 +1,78 @@
+<html>
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>BWB</title>
+
+	<link href="Content/style.css" rel="stylesheet" />
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+	<link href="Content/font-awesome.css" rel="stylesheet" />
+
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+	<script src="Scripts/angular.min.js"></script>
+	<script src="Scripts/angular-animate.min.js"></script>
+	<script src="Scripts/jquery-1.9.1.min.js"></script>
+	<script src="Scripts/bootstrap.min.js"></script>
+	<script src="Scripts/angular-ui-router.js"></script>
+	<script src="Scripts/angular-filter.min.js"></script>
+	<script src="Scripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+	<script src="Shared/app.js"></script>
+	<script src="Shared/routing.js"></script>
+
+	<script src="Sidebar/sidebar.feature.js"></script>
+	<script src="Home/home.feature.js"></script>
+	<script src="Contact/contact.feature.js"></script>
+	<script src="Date/date.feature.js"></script>
+	<script src="About/about.feature.js"></script>
+	<script src="View/view.feature.js"></script>
+
+	<script src="Shared/mainFactory.js"></script>
+
+	<script src="Sidebar/sidebar-view/sidebarView.component.js"></script>
+	<script src="Home/home-view/homeView.component.js"></script>
+	<script src="Date/date-view/dateView.component.js"></script>
+	<script src="Contact/contact-view/contactView.component.js"></script>
+	<script src="About/about-view/aboutView.component.js"></script>
+	<script src="View/view-view/viewView.component.js"></script>
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-app="app">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ui-sref-active="active"><a ui-sref="home" >Home</a></li>
+                    <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+                    <li ui-sref-active="active"><a ui-sref="contact">Contact</a></li>
+                    <li ui-sref-active="active"><a ui-sref="date">Random Date</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+		<div class="">
+		    <div class="jumbotron text-center">
+		        <h1>Blogs With Bae</h1>
+		        <!--<img src="../../Assets/img/MINIMAL-LOGO-NEW.png" />-->
+		    </div>
+		</div>
+		<div class="container">
+		<div ui-view name="nav"></div>
+    <div ui-view name="content"></div>
+
+</body>
+</html>
