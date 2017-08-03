@@ -1,32 +1,37 @@
 ﻿        <div class="col-lg-8">
-            <table class="table table-bordered table-condensed">
-                <thead>
-                    <tr>
-                        <td>All Dates</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody ng-repeat="date in vm.dates">
-                    <tr>
-                        <td>{{date.desc}}</td>
-                        <td>{{date.price | currency}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="text-center">
-                <h1>{{vm.rand}}</h1>
-                <button type="button" class="btn btn-primary" ng-click="vm.randomNumber()">New Date</button>
+          <div class="form-inline">
+
+            <div class="form-group">
+              <label for="select">Price Range</label>
+              <select class="form-control" ng-model="vm.categorySelected.category" ng-change="vm.changedValue(vm.categorySelected.category)">
+                  <option value="">--Cost--</option>
+                  <option ng-repeat="date in vm.dates | unique:'category'">{{ date.category }}</option>
+              </select>
             </div>
 
+
             <div class="text-center">
-                <h3>Category select</h3>
-                <div class="input-group">
-                  <select class="form-control" ng-model="vm.categorySelected.category">
-                      <option value="">--Select--</option>
-                      <option ng-repeat="date in vm.dates | unique:'category'">{{ date.category }}</option>
-                  </select>
-                </div>
+              <h1>{{vm.rand}}</h1>
+              <div class="form-group">
+                  <button type="button" class="btn btn-primary" ng-click="vm.randomNumber()">New Date</button>
+              </div>
             </div>
+          </div>
+<hr />
+          <table class="table table-bordered table-condensed table-striped">
+              <thead>
+                  <tr>
+                      <td>All Dates</td>
+                      <td></td>
+                  </tr>
+              </thead>
+              <tbody ng-repeat="date in vm.dates">
+                  <tr>
+                      <td>{{date.desc}}</td>
+                      <td>{{date.price | currency}}</td>
+                  </tr>
+              </tbody>
+          </table>
         </div>
     </div>
 </div>
