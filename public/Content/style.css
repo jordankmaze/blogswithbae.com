@@ -4,6 +4,14 @@
     font-family: Raleway !important;
 }
 
+li > .active {
+  background-color: #c1d9ee;
+}
+
+li > .active {
+  background-color: : #c1d9ee;
+}
+
 .share-box:hover,
 .share-box:focus {
   color: #fff;
@@ -532,4 +540,12 @@ form.tab-form-demo .tab-pane {
   background: -o-linear-gradient(right, #8D86C9, #CAC4CE); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, #8D86C9, #CAC4CE); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #8D86C9 , #CAC4CE); /* Standard syntax */
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: #777!important;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #fff !important;
 }

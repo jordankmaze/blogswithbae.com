@@ -15,6 +15,17 @@
                   }
                 }
             })
+            .state("postEmail", {
+                url: "/postEmail",
+                views: {
+                  nav: {
+                    template: "<sidebar-View></sidebar-View>"
+                  },
+                  content: {
+                    template: "<home-View></home-View>"
+                  }
+                }
+            })
             .state("about", {
                 url: "/about",
                 views: {
