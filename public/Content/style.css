@@ -38,6 +38,10 @@ p {
     color: #000;
 }
 
+.follow-content {
+   margin: auto;
+}
+
 .widget-content {
    display: inline-block;
    margin: auto;

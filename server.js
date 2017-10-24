@@ -18,40 +18,31 @@ app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
 app.post('/postEmail', sendMail = function(req, res) {
 
-  var data = req.body;
+    var message = req.body;
 
-  var transporter = nodemailer.createTransport(smtpTransport({
-      service: 'smtp-mail.outlook.com', // hostname
-      secureConnection: false, // TLS requires secureConnection to be false
-      port: 587, // port for secure SMTP
-      auth: {
-          user: "blogswithbae@outlook.com",
-          pass: "Darkknight2"
-      },
-      tls: {
-          ciphers:'SSLv3'
-      }
-  }));
+    var LPAWS = {};
+  
+    // Initialize the Amazon Cognito credentials provider
+    AWS.config.region = 'us-east-1'; // Region
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: 'us-east-1:add8b585-d649-4bfc-8659-3196385c1e50',
+    });
 
-  // setup email data with unicode symbols
-  var mailOptions = {
-      from: data.emailAddress,
-      to: 'blogswithbae@outlook.com', // list of receivers
-      subject: data.userName, // Subject line
-      text: data.messageBody//, plain text body
-      //html: '<b>Hello world ?</b>' // html body
-  };
+    LPAWS.sendToTopic = function() {
 
-  // send mail with defined transport object
-  transporter.sendMail(mailOptions, function(error, info) {
-      if (error) {
-          return console.log(error);
-      }
-      console.log('Message %s sent: %s', info.messageId, info.response);
-  });
+        var sns = new AWS.SNS();
+        var params = {
+            //Message: 'Hello topic', /* required */
+            Message: message,
+            Subject: document.getElementById('subject-body').value,
+            TopicArn: 'arn:aws:sns:us-east-1:432683389922:jordankmaze-contact-form'
+        };
 
-  console.log("email sent");
-
+        sns.publish(params, function(err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else     console.log(data);           // successful response
+        });
+    };
 });
 
 // listen (start app with node server.js) ======================================
